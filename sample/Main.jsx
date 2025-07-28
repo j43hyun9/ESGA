@@ -1,16 +1,11 @@
 import React from 'react'
 import Content from './Content'
-import './Main.css'
-import Sample from './Sample'
 // import './Main.css'
 const Main = ({ children }) => {
   return (
-    <div className='main-Container'>
+    <div style={{display:'flex'}}>
         <Content></Content>
-        <img src="../public/images/plus.png"
-          width={'10vw'} height={'10vh'}alt="" />
         <Content></Content>
-        
     </div>
   )
 }
