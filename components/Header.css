@@ -5,63 +5,81 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 10vh;
-  width: 100vw;
-  background: #fff;
+  height: 84px;
+  width: 100%;
+  max-width: 1200px; /* Adjust as needed for desktop */
+  margin: 0 auto 10px auto; /* Center and add bottom margin */
+  background: #F2EDAE;
+  padding: 0 10px; /* Add some horizontal padding */
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
 }
 
-/* 왼쪽 아이콘 */
-.icon {
-  flex-shrink: 0;
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    display: block;
+    left: auto;
+    top: auto;
+    z-index: auto;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-menu li {
+    padding: 0;
+  }
+
+  .nav-menu a {
+    font-size: 18px;
+    color: #222;
+  }
 }
-.menu-list {
-  /* 데스크톱에서는 보여주기 */
-  display: block;
-}
-/* 가운데 메뉴 리스트 */
-.menu-list ul {
+
+.logo a {
   display: flex;
-  gap: 24px; /* 메뉴 아이템 간 간격 */
-  list-style: none;
-  /* padding-right: 160px; */
-}
-
-/* 메뉴 내부 a 링크 스타일 */
-.menu-list a {
+  align-items: center;
   text-decoration: none;
   color: #222;
-  padding: 8px 12px;
 }
 
-.menu-list a:hover {
-  color: #007bff;
-  background: #f2f4f8;
-  border-radius: 4px;
+.logo-text {
+  font-size: 28px;
+  font-weight: 900; /* Extra bold */
+  margin-left: 10px;
+  font-family: 'Arial Black', sans-serif;
 }
 
-/* 오른쪽 햄버거 메뉴 */
 .hamburger-menu {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-right: 10px;
   gap: 6px;
-  padding: 20px;
-  display: flex;
-  padding: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
 }
 
 .bar {
   height: 4px;
   background-color: black;
   border-radius: 2px;
-  transition: 0.4s;
+  transition: all 0.3s ease-in-out;
 }
 
-/* 활성화 시 바 애니메이션 */
 .hamburger-menu.active .bar:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(8px, 8px);
 }
 
 .hamburger-menu.active .bar:nth-child(2) {
@@ -69,15 +87,41 @@
 }
 
 .hamburger-menu.active .bar:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* 메뉴 숨김과 보이기 */
 .nav-menu {
-  display: none;
-  /* 또는 transform, opacity 조합 */
+  position: fixed;
+  top: 10vh; 
+  left: -100%;
+  width: 100%;
+  height: 90vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: left 0.5s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .nav-menu.active {
-  display: block;
+  left: 0;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.nav-menu li {
+  padding: 20px 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
 }

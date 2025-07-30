@@ -1,15 +1,15 @@
 import React from 'react'
 import Content from './Content'
 import './Main.css'
-import Sample from './Sample'
+import ImageCompareSlider from './ImageCompareSlider'
 // import './Main.css'
-const Main = ({ children }) => {
+const Main = () => {
   return (
     <div className='main-Container'>
-        <Content></Content>
-        <img src="../public/images/plus.png"
-          width={'10vw'} height={'10vh'}alt="" />
-        <Content></Content>
+        <Content>
+          <ImageCompareSlider></ImageCompareSlider>
+        </Content>
+
         
     </div>
   )
