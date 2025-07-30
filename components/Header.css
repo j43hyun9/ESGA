@@ -1,6 +1,10 @@
 
 
-
+.imgFoot {
+  border : 1px solid none;
+  border-radius: 90%;
+  background: #F5D6A3;
+}
 .header {
   display: flex;
   align-items: center;
@@ -9,7 +13,7 @@
   width: 100%;
   max-width: 1200px; /* Adjust as needed for desktop */
   margin: 0 auto 10px auto; /* Center and add bottom margin */
-  background: #F2EDAE;
+  background: #F2EDAE ;
   padding: 0 10px; /* Add some horizontal padding */
   box-sizing: border-box;
   border-bottom: 1px solid black;
