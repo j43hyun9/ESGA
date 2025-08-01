@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React from 'react';
 import './Header.css';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <>
-      <header className="header">
-        <div className="logo">
-          <a href="/">
-            <div className="imgFoot">
+    <div>
+    <header className="header">
+      <div className="logo">
+        <a href="/">
+          <div className="imgFoot">
             <img src="/images/foot.png" alt="로고" width="40" />
             </div>
             <span style={{color:'#EEDC52'}} className="logo-text">PAW </span>
@@ -37,8 +29,8 @@ const Header = () => {
             <li><a href="#" onClick={toggleMenu}>Menu 3</a></li>
           </ul>
         </nav>
-    </>
+        </div>
   );
-};
+}
 
 export default Header;
