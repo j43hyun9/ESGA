@@ -1,14 +1,14 @@
 import React from 'react';
 import './Footer.css';
+import '../public/font/font.css'
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footerContent">
-        <h3 style={{marginBottom: 0,color: '#000000',
-                fontWeight: 600
-         }}>PAW PAW</h3>
-        <p style={{marginTop: 0}}>동물이 행복한 세상</p>
+      <div className="footerContent" 
+      style={{fontFamily:'Ownglyph_meetme-Rg'}}>   
+          PAW PAW
+          동물이 행복한 세상
       </div>
     </footer>
   );

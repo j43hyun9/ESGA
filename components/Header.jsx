@@ -29,6 +29,7 @@ const Header = () => {
           <div className="bar"></div>
         </div>
       </header>
+      {/* <div className="header-background"></div> */}
       <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <ul>
             <li><a href="#" onClick={toggleMenu}>Menu 1</a></li>

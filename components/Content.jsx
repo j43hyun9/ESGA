@@ -1,41 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Content.css';
-import ImageCompareSlider from './ImageCompareSlider';
-
+import Title from './Title';
 const Content = ({children}) => {
-  const images = [
-    '/images/poster1.jpg',
-    '/images/poster2.jpg',
-    '/images/poster4.jpg',
-    '/images/poster5.jpg',
-    '/images/poster6.jpg',
-    '/images/hoochoo1.jpeg',
 
-  ];
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const fileInputRef1 = useRef(null);
   const fileInputRef2 = useRef(null);
   const [uploadedImage1, setUploadedImage1] = useState(null);
   const [uploadedImage2, setUploadedImage2] = useState(null);
 
-  useEffect(() => {
-    if (isPaused) return;
 
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [images.length, isPaused]);
-
-  const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const goToImage = (index) => {
-    setCurrentImageIndex(index);
-  };
 
   const handleFileButtonClick = (ref) => {
     ref.current.click();
@@ -76,22 +49,7 @@ const Content = ({children}) => {
 
   return (
     <div className="content-container">
-      <div
-        className="title-section"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        <img src={images[currentImageIndex]} alt="Carousel" className="carousel-image" />
-        <div className="carousel-dots">
-          {images.map((_, index) => (
-            <div
-              key={index}
-              className={`carousel-dot ${index === currentImageIndex ? 'active' : ''}`}
-              onClick={() => goToImage(index)}
-            ></div>
-          ))}
-        </div>
-      </div>
+      <Title></Title>
 
 
       <div className="upload-section">
@@ -147,7 +105,7 @@ const Content = ({children}) => {
           ))}
         </div>
       </div>
-      <ImageCompareSlider></ImageCompareSlider>
+    
       
     </div>
   );

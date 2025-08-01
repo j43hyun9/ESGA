@@ -1,5 +1,8 @@
 .footer {
-  height: 10vh;
+  height: 3vh;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -9,5 +12,6 @@
 }
 
 .footerContent {
-  margin-left: 5vw;
+  display: flex;
+  margin: 0 auto;
 }
