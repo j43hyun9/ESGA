@@ -1,40 +1,22 @@
-import React, { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React from 'react';
 import './Header.css';
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <>
-      <header className="header">
-        <div className="logo">
-          <a href="/">
-            <div className="imgFoot">
+    <header className="header">
+      <div className="logo">
+        <a href="/">
+          <div className="imgFoot">
             <img src="/images/foot.png" alt="로고" width="40" />
-            </div>
-            <span className="logo-text">PAW PAW</span>
-          </a>
-        </div>
-        <div className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
-      </header>
-      <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <ul>
-            <li><a href="#" onClick={toggleMenu}>Menu 1</a></li>
-            <li><a href="#" onClick={toggleMenu}>Menu 2</a></li>
-            <li><a href="#" onClick={toggleMenu}>Menu 3</a></li>
-          </ul>
-        </nav>
-    </>
+          </div>
+          <span className="logo-text">PAW PAW</span>
+        </a>
+      </div>
+      <nav className="nav-menu">
+        <ul>
+        </ul>
+      </nav>
+    </header>
   );
 };
 
